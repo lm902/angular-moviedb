@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="row">
+  <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
+    <div class="list-group">
+      <button class="list-group-item list-group-item-action" (click)="setCategory(MovieListCategory.Popular)" [class.active]="this.category === MovieListCategory.Popular">{{locale.popular}}</button>
+      <button class="list-group-item list-group-item-action" (click)="setCategory(MovieListCategory.TopRated)" [class.active]="this.category === MovieListCategory.TopRated">{{locale.top_rated}}</button>
+      <button class="list-group-item list-group-item-action" (click)="setCategory(MovieListCategory.Upcoming)" [class.active]="this.category === MovieListCategory.Upcoming">{{locale.upcoming}}</button>
+      <button class="list-group-item list-group-item-action" (click)="setCategory(MovieListCategory.NowPlaying)" [class.active]="this.category === MovieListCategory.NowPlaying">{{locale.now_playing}}</button>
+    </div>
+  </div>
+  <div className='col pt-3 pt-sm-0'>
+    <div *ngIf="result">
+        <app-movie-list [movies]="result.results"></app-movie-list>
+        <app-page-control [current]="result.page" [max]="result.total_pages" [onChange]="pageChange"></app-page-control>
+    </div>
+    <h2 *ngIf="!result">{{locale.finding_movies}}</h2>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { api_key, base } from '../../appSettings.json'
+import appSettings from '../../appSettings.json'
 import MovieListCategory from './MovieListCategory'
 import MovieResultObject from './MovieResultObject.js'
 import MovieDetailResultObject from './MovieDetailResultObject.js'
@@ -30,8 +30,8 @@ export default {
         }
       }
     }
-    const response = await fetch(`${base as string}${method}?${Object.entries({
-      api_key, language: window.navigator.language, ...params
+    const response = await fetch(`${appSettings.base as string}${method}?${Object.entries({
+      api_key: appSettings.api_key, language: window.navigator.language, ...params
     }).map(x => x.join('=')).join('&')}`)
     return await response.json()
   },

@@ -9,13 +9,13 @@ import { RatedComponent } from './views/rated/rated.component'
 import { SearchComponent } from './views/search/search.component'
 
 const routes: Routes = [
-  { pathMatch: 'full', path: '/', component: HomeComponent },
-  { path: '/about', component: AboutComponent },
-  { path: '/search/:query', component: SearchComponent },
-  { path: '/discover', component: DiscoverComponent },
-  { path: '/detail/:id', component: DetailComponent },
-  { path: '/favorites', component: FavoritesComponent },
-  { path: '/rated', component: RatedComponent }
+  { pathMatch: 'full', path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'search/:query', component: SearchComponent },
+  { path: 'discover', component: DiscoverComponent },
+  { path: 'detail/:id', component: DetailComponent },
+  { path: 'favorites', component: FavoritesComponent },
+  { path: 'rated', component: RatedComponent }
 ]
 
 @NgModule({
