@@ -1,1 +1,2 @@
-<p>about works!</p>
+<p *ngFor="let line of locale.about_text.split('\n')">{{line}}</p>
+<a [href]="repo" class="btn btn-info" target="_blank">{{locale.about_repo}}</a>

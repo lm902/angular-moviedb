@@ -16,7 +16,7 @@ const zh_TW: LocaleDefinition = {
   finding_movies: '正在查找電影',
   favorite: '收藏',
   unfavorite: '取消收藏',
-  about_text: '本項目是SSDP React的課程設計。 \n您可以在其中瀏覽、搜索，並獲取電影庫中關於電影的詳細信息。 ',
+  about_text: '本項目是 react-moviedb 的 Angular 重製版。 \n您可以在其中瀏覽、搜索，並獲取電影庫中關於電影的詳細信息。 ',
   about_repo: '瀏覽源代碼',
   back: '返回',
   homepage: '主頁',

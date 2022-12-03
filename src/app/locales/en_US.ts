@@ -16,7 +16,7 @@ const en_US: LocaleDefinition = {
   finding_movies: 'Finding movies',
   favorite: 'Favorite',
   unfavorite: 'Unfavorite',
-  about_text: 'This project is the final assignment for SSDP React.\nIt is a site that you can browse, search, and read more about movies in the movie library.',
+  about_text: 'This project is a remake of react-moviedb in Angular.\nIt is a site that you can browse, search, and read more about movies in the movie library.',
   about_repo: 'Browse source',
   back: 'Back',
   homepage: 'Homepage',
