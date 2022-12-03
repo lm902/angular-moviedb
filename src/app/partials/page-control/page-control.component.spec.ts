@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { PageControlComponent } from './page-control.component';
+import { PageControlComponent } from './page-control.component'
 
 describe('PageControlComponent', () => {
-  let component: PageControlComponent;
-  let fixture: ComponentFixture<PageControlComponent>;
+  let component: PageControlComponent
+  let fixture: ComponentFixture<PageControlComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageControlComponent ]
+      declarations: [PageControlComponent]
     })
-    .compileComponents();
+      .compileComponents()
 
-    fixture = TestBed.createComponent(PageControlComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(PageControlComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})
