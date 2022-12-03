@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import appSettings from '../../appSettings.json'
+import locale from '../locales/LocaleImports'
 
 @Component({
   selector: 'app-layout',
@@ -6,7 +8,8 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-  constructor () { }
+  readonly icp = appSettings.icp
+  readonly locale = locale
 
   ngOnInit (): void {
   }
