@@ -30,7 +30,7 @@
           <dt>{{locale.status}}</dt>
           <dd>{{movie.status}}</dd>
           <dt>{{locale.rating}}</dt>
-          <dd>{{locale.rating_body.replace('$1', movie.vote_average.toString()).replace('$2', movie.vote_count.toString())}}</dd>
+          <dd>{{locale.rating_body.replace('$1', movie.vote_average.toFixed(1)).replace('$2', movie.vote_count.toString())}}</dd>
         </dl>
       </div>
     </div>
