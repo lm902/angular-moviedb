@@ -13,8 +13,8 @@ export class HomeComponent implements OnInit {
   #page = 1
   result: MovieQueryResult | null = null
   pending = false
-  MovieListCategory = MovieListCategory
-  locale = locale
+  readonly MovieListCategory = MovieListCategory
+  readonly locale = locale
 
   get category (): MovieListCategory {
     return this.#category
