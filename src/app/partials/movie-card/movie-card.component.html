@@ -1,1 +1,17 @@
-<p>movie-card works!</p>
+<div class="mb-2 col-xl-3 col-lg-4 col-md-6 px-3">
+  <a [routerLink]="'/detail/' + movie!.id" style="text-decoration: 'none'; color: 'black'">
+    <div class="card">
+      <img class="card-img-top" [src]="imgroot + '/w1000_and_h563_face' + movie!.poster_path" [alt]="movie!.title"/>
+      <div class="card-body">
+        <div class="card-title h5">{{movie!.title}}</div>
+        <div class="text-muted card-subtitle h6">
+          <div class="row">
+            <div class="col">{{movie!.release_date}}</div>
+            <div class="col-4" style="text-align: right;">★{{movie!.vote_average}}</div>
+          </div>
+        </div>
+        <p class="card-text">{{slice(movie!.overview || '', 200)}}</p>
+      </div>
+    </div>
+  </a>
+</div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
+import MovieDetailResultObject from 'src/app/models/MovieDetailResultObject'
 
 @Component({
   selector: 'app-rate-button',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./rate-button.component.css']
 })
 export class RateButtonComponent implements OnInit {
-  constructor () { }
+  @Input() movie: MovieDetailResultObject | null = null
 
   ngOnInit (): void {
   }

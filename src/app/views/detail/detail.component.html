@@ -1,1 +1,39 @@
-<p>detail works!</p>
+<div class="jumbotron">
+  <button class="btn btn-dark" (click)="back()">← {{locale.back}}</button>
+  <div *ngIf="movie">
+    <h2 *ngIf="movie.original_title !== movie.title">{{movie.original_title}}</h2>
+    <h4 *ngIf="movie.tagline">{{movie.tagline}}</h4>
+    <a *ngIf="movie.homepage" [href]="movie.homepage" class="btn btn-success" target="_blank">{{locale.homepage}}</a>
+    <app-favorite-button [movie]="movie"></app-favorite-button>
+    <app-rate-button [movie]="movie"></app-rate-button>
+    <h1>{{movie.title}}</h1>
+    <div class="row">
+      <div *ngIf="movie.poster_path" class="col-sm-6 col-md-5 col-lg-4 col-xl-3"><img style="width: 100%" [src]="imgroot + '/w600_and_h900_bestv2' + movie.poster_path" [alt]="movie.title" /></div>
+      <div class="col">
+        <dl>
+          <dt>{{locale.genres}}</dt>
+          <dd><span *ngFor="let genre of movie.genres; let last = last">{{genre.name}}<span *ngIf="!last">, </span></span></dd>
+          <dt>{{locale.overview}}</dt>
+          <dd>{{movie.overview}}</dd>
+          <dt>{{locale.production_companies}}</dt>
+          <dd><span *ngFor="let company of movie.production_companies; let last = last">{{company.name}}<span *ngIf="!last">, </span></span></dd>
+          <dt>{{locale.production_countries}}</dt>
+          <dd><span *ngFor="let country of movie.production_countries; let last = last">{{country.name}}<span *ngIf="!last">, </span></span></dd>
+          <dt>{{locale.release_date}}</dt>
+          <dd>{{movie.release_date}}</dd>
+          <dt>{{locale.revenue}}</dt>
+          <dd>{{movie.revenue | currency:'USD'}}</dd>
+          <dt *ngIf="movie.runtime">{{locale.runtime}}</dt>
+          <dd *ngIf="movie.runtime">{{movie.runtime}} {{locale.minutes}}</dd>
+          <dt>{{locale.spoken_languages}}</dt>
+          <dd><span *ngFor="let language of movie.spoken_languages; let last = last">{{language.name}}<span *ngIf="!last">, </span></span></dd>
+          <dt>{{locale.status}}</dt>
+          <dd>{{movie.status}}</dd>
+          <dt>{{locale.rating}}</dt>
+          <dd>{{locale.rating_body.replace('$1', movie.vote_average.toString()).replace('$2', movie.vote_count.toString())}}</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <h1 *ngIf="!movie">{{locale.loading}}</h1>
+</div>
