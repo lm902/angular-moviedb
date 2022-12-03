@@ -10,6 +10,14 @@ export class PageControlComponent implements OnInit {
   @Input() max = 1
   @Input() onChange = (page: number): void => { }
 
+  get pages (): number[] {
+    const items = []
+    for (let p = this.current - 2 > 0 ? this.current - 2 : 1; p <= (this.current + 2 < this.max ? this.current + 2 : this.max); p++) {
+      items.push(p)
+    }
+    return items
+  }
+
   ngOnInit (): void {
   }
 }
