@@ -1,1 +1,30 @@
-<p>navigation works!</p>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark px-4">
+  <span class="navbar-brand"><a routerLink="/" style="text-decoration: none; color: white;">angular-moviedb</a></span>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse" id="navbarSupportedContent">
+    <ul class='navbar-nav me-auto'>
+      <li class="nav-item">
+        <a exact routerLink="/" class="nav-link">{{locale.nav_home}}</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/about" class="nav-link">{{locale.nav_about}}</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/discover" class="nav-link">{{locale.nav_discover}}</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a aria-haspopup="true" aria-expanded="false" href="#" class="dropdown-toggle nav-link" role="button" id="navbarDropdown" data-bs-toggle="dropdown">{{locale.nav_my}}</a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/favorites" class="dropdown-item">{{locale.nav_favorites}}</a></li>
+          <li><a routerLink="/rated" class="dropdown-item">{{locale.nav_rated}}</a></li>
+        </ul>
+      </li>
+    </ul>
+    <form class='my-2 my-md-0 d-flex' (submit)="searchFormSubmit()">
+      <input [placeholder]="locale.nav_search" aria-label="Search" type="search" class="me-sm-2 form-control" [(ngModel)]="searchInputText" name="search">
+      <button type="submit" class="ms-2 ms-md-0 btn btn-outline-success text-nowrap">{{locale.nav_search}}</button>
+    </form>
+  </div>
+</nav>
