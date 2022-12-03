@@ -26,10 +26,6 @@ export class HomeComponent implements OnInit {
     void this.update()
   }
 
-  setCategory (category: MovieListCategory): void {
-    this.category = category
-  }
-
   get page (): number {
     return this.#page
   }
