@@ -6,19 +6,19 @@
   <div class="navbar-collapse collapse" id="navbarSupportedContent">
     <ul class='navbar-nav me-auto'>
       <li class="nav-item">
-        <a exact routerLink="/" class="nav-link">{{locale.nav_home}}</a>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">{{locale.nav_home}}</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/about" class="nav-link">{{locale.nav_about}}</a>
+        <a routerLink="/about" routerLinkActive="active" class="nav-link">{{locale.nav_about}}</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/discover" class="nav-link">{{locale.nav_discover}}</a>
+        <a routerLink="/discover" routerLinkActive="active" class="nav-link">{{locale.nav_discover}}</a>
       </li>
       <li class="nav-item dropdown">
         <a aria-haspopup="true" aria-expanded="false" href="#" class="dropdown-toggle nav-link" role="button" id="navbarDropdown" data-bs-toggle="dropdown">{{locale.nav_my}}</a>
         <ul class="dropdown-menu">
-          <li><a routerLink="/favorites" class="dropdown-item">{{locale.nav_favorites}}</a></li>
-          <li><a routerLink="/rated" class="dropdown-item">{{locale.nav_rated}}</a></li>
+          <li><a routerLink="/favorites" routerLinkActive="active" class="dropdown-item">{{locale.nav_favorites}}</a></li>
+          <li><a routerLink="/rated" routerLinkActive="active" class="dropdown-item">{{locale.nav_rated}}</a></li>
         </ul>
       </li>
     </ul>
