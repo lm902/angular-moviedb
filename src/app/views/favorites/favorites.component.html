@@ -1,1 +1,2 @@
-<p>favorites works!</p>
+<app-movie-list *ngIf="favorites.all.length" [movies]="favorites.all"></app-movie-list>
+<span *ngIf="!favorites.all.length">{{locale.no_favorites}}</span>

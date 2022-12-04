@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { favorites } from '../../models/UserCustomization'
+import locale from '../../locales/LocaleImports'
 
 @Component({
   selector: 'app-favorites',
@@ -6,7 +8,8 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./favorites.component.css']
 })
 export class FavoritesComponent implements OnInit {
-  constructor () { }
+  readonly locale = locale
+  readonly favorites = favorites
 
   ngOnInit (): void {
   }
