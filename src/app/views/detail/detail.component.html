@@ -8,7 +8,7 @@
     <app-rate-button [movie]="movie"></app-rate-button>
     <h1>{{movie.title}}</h1>
     <div class="row">
-      <div *ngIf="movie.poster_path" class="col-sm-6 col-md-5 col-lg-4 col-xl-3"><img style="width: 100%" [src]="imgroot + '/w600_and_h900_bestv2' + movie.poster_path" [alt]="movie.title" /></div>
+      <div *ngIf="movie.poster_path" class="col-sm-6 col-md-5 col-lg-4 col-xl-3"><img class="w-100" [src]="imgroot + '/w600_and_h900_bestv2' + movie.poster_path" [alt]="movie.title" /></div>
       <div class="col">
         <dl>
           <dt>{{locale.genres}}</dt>

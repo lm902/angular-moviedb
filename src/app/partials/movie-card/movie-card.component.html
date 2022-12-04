@@ -1,5 +1,5 @@
 <div class="mb-2 col-xl-3 col-lg-4 col-md-6 px-3">
-  <a [routerLink]="'/detail/' + movie!.id" style="text-decoration: 'none'; color: 'black'">
+  <a [routerLink]="'/detail/' + movie!.id" class="text-decoration-none text-black">
     <div class="card">
       <img *ngIf="movie!.poster_path" class="card-img-top" [src]="imgroot + '/w1000_and_h563_face' + movie!.poster_path" [alt]="movie!.title"/>
       <div class="card-body">
