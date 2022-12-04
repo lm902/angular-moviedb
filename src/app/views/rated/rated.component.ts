@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { liked, disliked } from '../../models/UserCustomization'
+import locale from '../../locales/LocaleImports'
 
 @Component({
   selector: 'app-rated',
@@ -6,7 +8,9 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./rated.component.css']
 })
 export class RatedComponent implements OnInit {
-  constructor () { }
+  readonly locale = locale
+  readonly liked = liked
+  readonly disliked = disliked
 
   ngOnInit (): void {
   }

@@ -1,1 +1,6 @@
-<p>rated works!</p>
+<h1>{{locale.liked}}</h1>
+<app-movie-list *ngIf="liked.all.length" [movies]="liked.all"></app-movie-list>
+<span *ngIf="!liked.all.length">{{locale.no_liked}}</span>
+<h1>{{locale.disliked}}</h1>
+<app-movie-list *ngIf="disliked.all.length" [movies]="disliked.all"></app-movie-list>
+<span *ngIf="!disliked.all.length">{{locale.no_disliked}}</span>
