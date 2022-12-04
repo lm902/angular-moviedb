@@ -1,1 +1,10 @@
-<p>rate-button works!</p>
+<div class="btn-group ms-1" role="group">
+  <button *ngIf="!disliked" class="btn btn-success" (click)="click('liked')">
+    <span *ngIf="liked">{{locale.liked}}</span>
+    <span *ngIf="!liked">{{locale.like}}</span>
+  </button>
+  <button *ngIf="!liked" class="btn btn-danger" (click)="click('disliked')">
+    <span *ngIf="disliked">{{locale.disliked}}</span>
+    <span *ngIf="!disliked">{{locale.dislike}}</span>
+  </button>
+</div>

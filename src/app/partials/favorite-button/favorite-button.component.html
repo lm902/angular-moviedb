@@ -1,1 +1,4 @@
-<p>favorite-button works!</p>
+<button class="btn ms-1" [class.btn-primary]="!favorited" [class.btn-secondary]="favorited" (click)="click()">
+  <span *ngIf="favorited">{{locale.unfavorite}}</span>
+  <span *ngIf="!favorited">{{locale.favorite}}</span>
+</button>
