@@ -1,1 +1,6 @@
-<p>search works!</p>
+<h1>{{query ? locale.search_result_title.replace('$1', decodeURIComponent(query)) : locale.search_no_keyword}}</h1>
+<div *ngIf="result">
+  <app-movie-list [movies]="result.results"></app-movie-list>
+  <app-page-control [current]="result.page" [max]="result.total_pages" [onChange]="pageChange"></app-page-control>
+</div>
+<h2 *ngIf="!result">{{locale.finding_movies}}</h2>
