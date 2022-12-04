@@ -1,1 +1,25 @@
-<p>discover works!</p>
+<form className='mb-2' (change)="!pending && page = 1">
+  <div class="form-group mb-2">
+    <label for="year-input" class="form-label">{{locale.year}}</label>
+    <input class="form-control" type="number" name="year-input" id="year-input" [placeholder]="locale.unspecified" [(ngModel)]="yearInputText" maxlength="4" minlength="4" />
+  </div>
+  <div class="form-group mb-2">
+    <label class="form-label">{{locale.genres}}</label>
+    <div class="row">
+      <div *ngFor="let genre of genres" class="col-lg-2 col-md-3 col-sm-4 col-7">
+        <div class="form-check form-check-inline">
+          <input type="checkbox" [name]="'genre-checkbox-' + genre.id" [id]="'genre-checkbox-' + genre.id" class="form-check-input position-static" (change)="genreCheckboxChange($event, genre)" />
+          <label [for]="'genre-checkbox-' + genre.id" class="form-label">{{genre.name}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<div *ngIf="result">
+  <app-movie-list [movies]="result.results"></app-movie-list>
+  <app-page-control [current]="result.page" [max]="result.total_pages" [onChange]="pageChange"></app-page-control>
+</div>
+<div *ngIf="!result">
+  <h2 *ngIf="pending">{{locale.finding_movies}}</h2>
+  <p *ngIf="!pending">{{locale.condition_prompt}}</p>
+</div>

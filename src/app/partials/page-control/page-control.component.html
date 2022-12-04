@@ -1,29 +1,29 @@
 <ul class="pagination">
   <li class="page-item" [class.disabled]="current <= 1">
-    <a role="button" href="#" class="page-link" [attr.disabled]="current <= 1 || ''" (click)="onChange(1)">
+    <a role="button" href="#" class="page-link" [attr.disabled]="current <= 1 || ''" (click)="$event.preventDefault(); onChange(1)">
       <span aria-hidden="true">«</span>
       <span class="visually-hidden">First</span>
     </a>
   </li>
   <li class="page-item" [class.disabled]="current <= 1">
-    <a role="button" href="#" class="page-link" [attr.disabled]="current <= 1 || ''" (click)="onChange(current - 1)">
+    <a role="button" href="#" class="page-link" [attr.disabled]="current <= 1 || ''" (click)="$event.preventDefault(); onChange(current - 1)">
       <span aria-hidden="true">‹</span>
       <span class="visually-hidden">Previous</span>
     </a>
   </li>
   <li class="page-item" *ngFor="let p of pages" [class.active]="current === p">
-    <a role="button" href="#" class="page-link" [attr.disabled]="current === p || ''" (click)="onChange(p)">
+    <a role="button" href="#" class="page-link" [attr.disabled]="current === p || ''" (click)="$event.preventDefault(); onChange(p)">
       {{p}}
     </a>
   </li>
   <li class="page-item" [class.disabled]="current >= max">
-    <a role="button" href="#" class="page-link" [attr.disabled]="current >= max || ''" (click)="onChange(current + 1)">
+    <a role="button" href="#" class="page-link" [attr.disabled]="current >= max || ''" (click)="$event.preventDefault(); onChange(current + 1)">
       <span aria-hidden="true">›</span>
       <span class="visually-hidden">Next</span>
     </a>
   </li>
   <li class="page-item" [class.disabled]="current >= max">
-    <a role="button" href="#" class="page-link" [attr.disabled]="current >= max || ''" (click)="onChange(max)">
+    <a role="button" href="#" class="page-link" [attr.disabled]="current >= max || ''" (click)="$event.preventDefault(); onChange(max)">
       <span aria-hidden="true">»</span>
       <span class="visually-hidden">Last</span>
     </a>

@@ -21,6 +21,10 @@ export interface Genre {
   name: string
 }
 
+export interface GenresQueryResult {
+  genres: Genre[]
+}
+
 export default {
   async query<T> (method: string, params?: QueryParams): Promise<T> {
     if (params != null) {
@@ -55,7 +59,7 @@ export default {
     return await this.query('/search/movie', { query, page })
   },
 
-  get genres (): Promise<Genre[]> {
+  get genres (): Promise<GenresQueryResult> {
     return this.query('/genre/movie/list')
   },
 
